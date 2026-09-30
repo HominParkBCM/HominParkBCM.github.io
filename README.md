@@ -17,7 +17,7 @@ Inline figure schematics live in `_build/svg/`. Raster figures are in `assets/im
 
 ## Figure sources
 
-- Fig. 1: Figures 1, 2, 3 and 5 of Tozzi et al., International Journal of Surgery 2026 (CC BY-NC-ND 4.0, reproduced unchanged)
+- Fig. 1: Figures 1, 2 and 3 of Tozzi et al., International Journal of Surgery 2026 (CC BY-NC-ND 4.0, reproduced unchanged)
 - Fig. 6 and the chart in Fig. 2b: drawn for this site from numbers in the papers
 - Fig. 2a: Figure 1 of the MICCAI 2026 paper (Park et al.)
 - Fig. 3: github.com/powersimmani/MRI-based-Diagnosis-of-Rotator-Cuff-Tears-using-Deep-Learning-and-Weighted-Linear-Combinations and the AIVS repository
