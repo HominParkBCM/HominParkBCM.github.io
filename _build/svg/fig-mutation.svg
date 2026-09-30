@@ -1,0 +1,144 @@
+<svg viewBox="0 0 1200 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f6t f6d">
+<title id="f6t">Point mutations as data augmentation for genomic sequences</title>
+<desc id="f6d">A coding sequence of eight codons and three augmented copies. A silent mutation changes GCT to GCC and keeps alanine. A missense mutation changes AAA to AGA, lysine to arginine. A nonsense mutation changes TGG to the stop codon TAG. In the paper, silent and missense mutations improved model performance, while nonsense mutations and random mutations in non-coding regions generally degraded it.</desc>
+<text x="0" y="22" font-size="15" fill="#17212b">Codon substitutions in a coding region</text>
+<text x="1000" y="22" font-size="15" fill="#17212b">Effect as augmentation</text>
+<text x="0" y="70" font-size="14.5" fill="#17212b">Original sequence</text>
+<rect x="214" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="226.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="252.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="278.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="318.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="344.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="370.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<text x="344.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">A</text>
+<rect x="398" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="410.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="436.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="450" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="462.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">K</text>
+<rect x="490" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="502.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="528.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="554.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="594.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="620.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="634" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="646.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">W</text>
+<rect x="674" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="686.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="712.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="738.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="778.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="804.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="830.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="870.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="896.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="922.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="70" font-size="15" fill="#56626f">Baseline</text>
+<text x="0" y="136" font-size="14.5" fill="#17212b">Silent mutation</text>
+<rect x="214" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="226.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="252.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="278.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="318.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="344.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="116" width="24" height="28" rx="3" fill="#c23a64"/><text x="370.0" y="136" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="344.0" y="163" font-size="13" font-weight="700" fill="#35307a" text-anchor="middle">A</text>
+<rect x="398" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="410.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="436.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="450" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="462.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">K</text>
+<rect x="490" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="502.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="528.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="554.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="594.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="620.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="634" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="646.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">W</text>
+<rect x="674" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="686.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="712.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="738.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="778.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="804.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="830.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="870.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="896.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="922.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="136" font-size="15" font-weight="700" fill="#35307a">Improved</text>
+<text x="0" y="202" font-size="14.5" fill="#17212b">Missense mutation</text>
+<rect x="214" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="226.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="252.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="278.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="318.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="344.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="370.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<text x="344.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">A</text>
+<rect x="398" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="410.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="182" width="24" height="28" rx="3" fill="#c23a64"/><text x="436.0" y="202" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="450" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="462.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="229" font-size="13" font-weight="700" fill="#c23a64" text-anchor="middle">R</text>
+<rect x="490" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="502.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="528.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="554.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="594.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="620.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="634" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="646.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">W</text>
+<rect x="674" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="686.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="712.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="738.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="778.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="804.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="830.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="870.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="896.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="922.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="202" font-size="15" font-weight="700" fill="#35307a">Improved</text>
+<text x="0" y="268" font-size="14.5" fill="#17212b">Nonsense mutation</text>
+<rect x="214" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="226.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="252.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="278.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="318.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="344.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="370.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<text x="344.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">A</text>
+<rect x="398" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="410.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="436.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="450" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="462.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">K</text>
+<rect x="490" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="502.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="528.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="554.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="594.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="248" width="24" height="28" rx="3" fill="#c23a64"/><text x="620.0" y="268" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="634" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="646.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="295" font-size="13" font-weight="700" fill="#c23a64" text-anchor="middle">stop</text>
+<rect x="674" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="686.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="712.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="738.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="778.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="804.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="830.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="870.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="896.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="922.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="268" font-size="15" font-weight="700" fill="#c23a64">Degraded</text>
+<text x="0" y="336" font-size="13" fill="#56626f">Letters under each codon are the encoded amino acids. Substituted bases in pink.</text>
+<text x="0" y="358" font-size="13" fill="#56626f">Random mutations in non-coding regions also degraded performance.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f3bt f3bd">
+  <title id="f3bt">Composition of the released shoulder MRI dataset</title>
+  <desc id="f3bd">2,447 T2-weighted coronal scans: 1,628 normal, 157 partial-thickness tears and 662 full-thickness tears.</desc>
+  <text x="0" y="20" font-size="15" fill="#17212b">2,447 coronal T2 scans, 16 slices each</text>
+  <!-- scale: 1,628 -> 300 px -->
+  <g font-size="14.5" fill="#17212b">
+    <text x="0" y="68">Normal</text>
+    <rect x="0" y="78" width="300" height="28" fill="#8c92cf"/>
+    <text x="308" y="98" font-weight="700">1,628</text>
+
+    <text x="0" y="146">Partial-thickness tear</text>
+    <rect x="0" y="156" width="28.9" height="28" fill="#c23a64"/>
+    <text x="37" y="176" font-weight="700" fill="#c23a64">157</text>
+
+    <text x="0" y="224">Full-thickness tear</text>
+    <rect x="0" y="234" width="122" height="28" fill="#35307a"/>
+    <text x="130" y="254" font-weight="700">662</text>
+  </g>
+  <text x="0" y="292" font-size="13" fill="#56626f">Partial-thickness tears make up 6% of the scans.</text>
+</svg>

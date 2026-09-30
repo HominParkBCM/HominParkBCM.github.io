@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ho-min Park, biomedical AI research</title>
+<meta name="description" content="Ho-min Park builds interpretable machine learning for surgical video, radiology and molecular biology at the Texas Children&#x27;s Hospital Data Center, Baylor College of Medicine.">
+<meta name="author" content="Ho-min Park">
+<link rel="canonical" href="https://hominparkbcm.github.io/">
+<meta property="og:title" content="Ho-min Park, biomedical AI research">
+<meta property="og:description" content="Ho-min Park builds interpretable machine learning for surgical video, radiology and molecular biology at the Texas Children&#x27;s Hospital Data Center, Baylor College of Medicine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hominparkbcm.github.io/">
+<meta property="og:image" content="https://hominparkbcm.github.io/assets/img/rct-camscore-1600.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ho-min Park","jobTitle":"Assistant Professor","affiliation":{"@type":"Organization","name":"Baylor College of Medicine"},"email":"Ho-min.Park@bcm.edu","sameAs":["https://scholar.google.com/citations?user=mFzW6LEAAAAJ","https://orcid.org/0000-0001-9937-8617","https://github.com/powersimmani"]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Ho-min Park</a>
+    <nav class="nav" aria-label="Sections"><a href="index.html#surgery">Surgery</a><a href="index.html#radiology">Radiology</a><a href="index.html#molecules">Molecules</a><a href="index.html#microscopy">Microscopy</a><a href="index.html#signals">Signals</a><a href="index.html#teaching">Teaching</a><a href="publications.html">Publications</a><a href="index.html#contact">Contact</a></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+<section class="hero" aria-labelledby="name">
+  <h1 id="name">Ho-min Park</h1>
+  <p class="post">Assistant Professor, Texas Children's Hospital Data Center, Baylor College of Medicine, Houston</p>
+  <p class="lead">I build machine learning models for surgery, radiology and molecular biology that the clinician or biologist using them can inspect and question. I work as the engineering partner of surgeons and biologists, from model design to interpretability analysis.</p>
+  <ul class="links">
+    <li><a href="mailto:Ho-min.Park@bcm.edu">Email</a></li>
+    <li><a href="https://scholar.google.com/citations?user=mFzW6LEAAAAJ">Google Scholar</a></li>
+    <li><a href="https://github.com/powersimmani">GitHub</a></li>
+    <li><a href="https://orcid.org/0000-0001-9937-8617">ORCID</a></li>
+    <li><a href="https://www.linkedin.com/in/park-ho-min-b46658a6">LinkedIn</a></li>
+  </ul>
+  <figure class="series">
+    <div class="series-grid">
+      <span class="lab">Normal</span>
+      <div class="strip row1"><img src="assets/img/rct-mri-normal-1988.webp" srcset="assets/img/rct-mri-normal-1000.webp 1000w, assets/img/rct-mri-normal-1988.webp 1988w" sizes="(min-width: 1160px) 960px, 90vw" alt="Sixteen coronal MRI slices of a normal shoulder" loading="lazy" decoding="async"></div>
+      <span class="lab">Partial-thickness tear</span>
+      <div class="strip row2"><img src="assets/img/rct-mri-partial-1988.webp" srcset="assets/img/rct-mri-partial-1000.webp 1000w, assets/img/rct-mri-partial-1988.webp 1988w" sizes="(min-width: 1160px) 960px, 90vw" alt="Sixteen coronal MRI slices of a shoulder with a partial-thickness rotator cuff tear" loading="lazy" decoding="async"></div>
+      <span class="lab">Full-thickness tear</span>
+      <div class="strip row3"><img src="assets/img/rct-mri-full-1988.webp" srcset="assets/img/rct-mri-full-1000.webp 1000w, assets/img/rct-mri-full-1988.webp 1988w" sizes="(min-width: 1160px) 960px, 90vw" alt="Sixteen coronal MRI slices of a shoulder with a full-thickness rotator cuff tear" loading="lazy" decoding="async"></div>
+    </div>
+    <figcaption>Sixteen coronal T2-weighted slices, about 2 mm apart, for three shoulders from the rotator cuff tear dataset we released in 2020. The models behind <a href="#fig3">Fig. 3</a> read series like these.</figcaption>
+  </figure>
+</section>
+<section class="theme" id="surgery" aria-labelledby="h-surgery">
+  <h2 id="h-surgery">Surgical video</h2>
+  <p class="intro">Staging laparoscopy decides whether a patient with gastrointestinal cancer can go on to curative treatment, and that decision often depends on whether a small nodule on the peritoneum is metastasis. With surgeons at Ghent University Hospital I build models that read these videos, and methods that still work when the phase or lesion of interest appears in only a few frames.</p>
+<figure class="plate" id="fig1">
+  <div class="plate-body"><div class="svgscroll" tabindex="0" role="region" aria-label="Scrollable figure"><svg viewBox="0 0 1200 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f1t f1d">
+  <title id="f1t">Multimodal model for peritoneal lesions during staging laparoscopy</title>
+  <desc id="f1d">Panel a: an image model reads intraoperative laparoscopy frames and a morphology model reads features scored by two expert surgeons; the two outputs are fused to classify a lesion as peritoneal metastasis or benign. Panel b: area under the ROC curve on 67 patients. Multimodal model 0.88 with 95 percent confidence interval 0.77 to 0.96, expert surgeons 0.78, best image-only deep learning model 0.72.</desc>
+  <defs>
+    <radialGradient id="tissue" cx="45%" cy="42%" r="62%">
+      <stop offset="0" stop-color="#f1b9ae"/>
+      <stop offset=".55" stop-color="#cf6f6a"/>
+      <stop offset="1" stop-color="#6e2630"/>
+    </radialGradient>
+    <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#35307a"/>
+    </marker>
+  </defs>
+
+  <text x="0" y="22" font-size="20" font-weight="700" fill="#c23a64">a</text>
+
+  <!-- image branch -->
+  <rect x="24" y="44" width="196" height="176" rx="6" fill="#0d0f12"/>
+  <circle cx="122" cy="132" r="80" fill="url(#tissue)"/>
+  <ellipse cx="92" cy="104" rx="9" ry="7" fill="#f6ecdc" stroke="#e3c9a8"/>
+  <ellipse cx="146" cy="160" rx="12" ry="9" fill="#f7efe2" stroke="#e3c9a8"/>
+  <ellipse cx="160" cy="98" rx="5" ry="4" fill="#f2e3cc"/>
+  <ellipse cx="84" cy="168" rx="6" ry="5" fill="#f2e3cc"/>
+  <circle cx="146" cy="160" r="22" fill="none" stroke="#f0819f" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <text x="122" y="244" font-size="14" fill="#56626f" text-anchor="middle">Intraoperative video frame</text>
+
+  <line x1="228" y1="132" x2="262" y2="132" stroke="#35307a" stroke-width="2" marker-end="url(#ar1)"/>
+  <rect x="268" y="94" width="200" height="76" rx="6" fill="#e6e6f4" stroke="#35307a"/>
+  <text x="368" y="126" font-size="16" font-weight="700" fill="#17212b" text-anchor="middle">Image model</text>
+  <text x="368" y="148" font-size="13.5" fill="#35307a" text-anchor="middle">deep learning on frames</text>
+
+  <!-- morphology branch -->
+  <rect x="24" y="276" width="196" height="150" rx="6" fill="#ffffff" stroke="#b9c1ca"/>
+  <g fill="#b9c1ca">
+    <rect x="42" y="298" width="86" height="8" rx="4"/>
+    <rect x="42" y="326" width="70" height="8" rx="4"/>
+    <rect x="42" y="354" width="96" height="8" rx="4"/>
+    <rect x="42" y="382" width="62" height="8" rx="4"/>
+  </g>
+  <g fill="#35307a">
+    <circle cx="160" cy="302" r="5"/><circle cx="176" cy="302" r="5"/><circle cx="192" cy="302" r="5" fill="#d6dce2"/>
+    <circle cx="160" cy="330" r="5"/><circle cx="176" cy="330" r="5" fill="#d6dce2"/><circle cx="192" cy="330" r="5" fill="#d6dce2"/>
+    <circle cx="160" cy="358" r="5"/><circle cx="176" cy="358" r="5"/><circle cx="192" cy="358" r="5"/>
+    <circle cx="160" cy="386" r="5"/><circle cx="176" cy="386" r="5" fill="#d6dce2"/><circle cx="192" cy="386" r="5" fill="#d6dce2"/>
+  </g>
+  <text x="24" y="450" font-size="14" fill="#56626f">Scored by two expert surgeons</text>
+
+  <line x1="228" y1="350" x2="262" y2="350" stroke="#35307a" stroke-width="2" marker-end="url(#ar1)"/>
+  <rect x="268" y="312" width="200" height="76" rx="6" fill="#e6e6f4" stroke="#35307a"/>
+  <text x="368" y="344" font-size="16" font-weight="700" fill="#17212b" text-anchor="middle">Morphology model</text>
+  <text x="368" y="366" font-size="13.5" fill="#35307a" text-anchor="middle">machine learning on scores</text>
+
+  <!-- fusion -->
+  <path d="M476 132 H520 Q540 132 540 152 V214" fill="none" stroke="#35307a" stroke-width="2"/>
+  <path d="M476 350 H520 Q540 350 540 330 V268" fill="none" stroke="#35307a" stroke-width="2"/>
+  <line x1="540" y1="241" x2="578" y2="241" stroke="#35307a" stroke-width="2" marker-end="url(#ar1)"/>
+  <rect x="584" y="200" width="168" height="82" rx="6" fill="#35307a"/>
+  <text x="668" y="236" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Multimodal</text>
+  <text x="668" y="258" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">fusion</text>
+  <line x1="668" y1="290" x2="668" y2="324" stroke="#35307a" stroke-width="2" marker-end="url(#ar1)"/>
+  <text x="668" y="352" font-size="15" fill="#17212b" text-anchor="middle">Peritoneal metastasis</text>
+  <text x="668" y="372" font-size="15" fill="#17212b" text-anchor="middle">or benign lesion</text>
+
+  <!-- panel b: AUC -->
+  <line x1="810" y1="10" x2="810" y2="450" stroke="#e6e9ed"/>
+  <text x="836" y="22" font-size="20" font-weight="700" fill="#c23a64">b</text>
+  <text x="862" y="22" font-size="15" fill="#17212b">Area under the ROC curve, 67 patients</text>
+
+  <g font-size="14.5" fill="#17212b">
+    <text x="840" y="84">Multimodal model</text>
+    <text x="840" y="170">Expert surgeons</text>
+    <text x="840" y="256">Best image-only model</text>
+  </g>
+  <!-- scale: 0.5 at x=840, 1.0 at x=1180 -> 680 px per unit -->
+  <rect x="840" y="94" width="258" height="30" fill="#c23a64"/>
+  <line x1="1024" y1="109" x2="1153" y2="109" stroke="#17212b" stroke-width="2"/>
+  <line x1="1024" y1="100" x2="1024" y2="118" stroke="#17212b" stroke-width="2"/>
+  <line x1="1153" y1="100" x2="1153" y2="118" stroke="#17212b" stroke-width="2"/>
+  <text x="1160" y="84" font-size="15" font-weight="700" fill="#c23a64" text-anchor="end">0.88</text>
+
+  <rect x="840" y="180" width="190" height="30" fill="#8c92cf"/>
+  <text x="1038" y="201" font-size="15" font-weight="700" fill="#17212b">0.78</text>
+
+  <rect x="840" y="266" width="150" height="30" fill="#b9c1ca"/>
+  <text x="998" y="287" font-size="15" font-weight="700" fill="#17212b">0.72</text>
+
+  <line x1="840" y1="330" x2="1180" y2="330" stroke="#8a949f"/>
+  <g font-size="13" fill="#56626f" text-anchor="middle">
+    <line x1="840" y1="330" x2="840" y2="337" stroke="#8a949f"/><text x="840" y="354">0.5</text>
+    <line x1="908" y1="330" x2="908" y2="337" stroke="#8a949f"/><text x="908" y="354">0.6</text>
+    <line x1="976" y1="330" x2="976" y2="337" stroke="#8a949f"/><text x="976" y="354">0.7</text>
+    <line x1="1044" y1="330" x2="1044" y2="337" stroke="#8a949f"/><text x="1044" y="354">0.8</text>
+    <line x1="1112" y1="330" x2="1112" y2="337" stroke="#8a949f"/><text x="1112" y="354">0.9</text>
+    <line x1="1180" y1="330" x2="1180" y2="337" stroke="#8a949f"/><text x="1172" y="354">1.0</text>
+  </g>
+  <text x="840" y="392" font-size="13" fill="#56626f">Whisker: 95% confidence interval for the</text>
+  <text x="840" y="410" font-size="13" fill="#56626f">multimodal model (0.77 to 0.96).</text>
+</svg>
+</div></div><p class="hint">Scroll sideways to see the whole figure.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 1</span>International Journal of Surgery, 2026<br>Co-first author, equal contribution</div>
+    <div class="legend">
+      <p class="fig-title">A multimodal model for peritoneal lesions during staging laparoscopy</p>
+      <p>(a) An image model classifies lesions in intraoperative video frames. A second model uses morphologic features of the same lesions, scored by two expert surgeons. The two outputs are fused into one prediction of peritoneal metastasis or benign lesion.</p><p>(b) Discrimination on 67 patients. The fused model reached an AUC of 0.88, above the expert surgeons (0.78) and the best image-only model (0.72).</p>
+      <p class="cite">Tozzi F, Park HM, Mousavi SA, Van Liefferinge M, Moon D, Fadaei S, et al. <i>International Journal of Surgery</i> 112(1):373&ndash;383, 2026.</p>
+      <p class="res"><a href="https://doi.org/10.1097/JS9.0000000000003448">Paper</a></p>
+    </div>
+  </figcaption>
+</figure>
+<figure class="plate" id="fig2">
+  <div class="plate-body"><div class="svgscroll" tabindex="0" role="region" aria-label="Scrollable figure"><svg viewBox="0 0 1200 690" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f2t f2d">
+  <title id="f2t">Test-time adaptation for rare surgical phase recognition</title>
+  <desc id="f2d">Panel a: schematic phase sequence of a gastric bypass video in which two closure phases cover 0.35 and 0.69 percent of frames. Panel b: five stages of the method, from prototype prediction through temporal filtering, adaptive thresholding, guided frame selection and human annotation, which feeds back into the prototypes. Panel c: rare-phase mean accuracy. MultiBypass140: base 25.9, temporal 51.6, combined 55.1, oracle 85.3 percent. Cataract-101: base 12.0, temporal 30.8, combined 45.3, oracle 98.7 percent.</desc>
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#35307a"/>
+    </marker>
+  </defs>
+
+  <!-- a: phase timeline -->
+  <text x="0" y="22" font-size="20" font-weight="700" fill="#c23a64">a</text>
+  <text x="26" y="22" font-size="15" fill="#17212b">Phase sequence of one gastric bypass video, 13 phases (schematic)</text>
+  <g>
+    <rect x="30" y="86" width="70"  height="40" fill="#d9dcf0"/>
+    <rect x="100" y="86" width="96"  height="40" fill="#b9bee3"/>
+    <rect x="196" y="86" width="150" height="40" fill="#d9dcf0"/>
+    <rect x="346" y="86" width="118" height="40" fill="#8c92cf"/>
+    <rect x="464" y="86" width="84"  height="40" fill="#d9dcf0"/>
+    <rect x="548" y="86" width="176" height="40" fill="#b9bee3"/>
+    <rect x="724" y="86" width="96"  height="40" fill="#d9dcf0"/>
+    <rect x="820" y="86" width="62"  height="40" fill="#8c92cf"/>
+    <rect x="882" y="86" width="4"   height="40" fill="#c23a64"/>
+    <rect x="886" y="86" width="104" height="40" fill="#d9dcf0"/>
+    <rect x="990" y="86" width="8"   height="40" fill="#c23a64"/>
+    <rect x="998" y="86" width="96"  height="40" fill="#b9bee3"/>
+    <rect x="1094" y="86" width="76" height="40" fill="#d9dcf0"/>
+  </g>
+  <line x1="30" y1="146" x2="1164" y2="146" stroke="#8a949f" marker-end="url(#ar2)"/>
+  <text x="30" y="166" font-size="13" fill="#56626f">Video frames over time</text>
+
+  <line x1="884" y1="84" x2="884" y2="58" stroke="#c23a64" stroke-width="1.5"/>
+  <text x="876" y="52" font-size="13.5" fill="#c23a64" text-anchor="end">Closure of Petersen space, 0.35% of frames</text>
+  <line x1="994" y1="84" x2="994" y2="58" stroke="#c23a64" stroke-width="1.5"/>
+  <text x="1002" y="52" font-size="13.5" fill="#c23a64">Mesenteric defect, 0.69%</text>
+
+  <!-- b: five stages (a real sequence) -->
+  <text x="0" y="222" font-size="20" font-weight="700" fill="#c23a64">b</text>
+  <text x="26" y="222" font-size="15" fill="#17212b">Test-time adaptation on an unlabeled test video</text>
+
+  <g fill="#17212b">
+    <rect x="26" y="248" width="208" height="104" rx="6" fill="#e6e6f4" stroke="#35307a"/>
+    <text x="40" y="277" font-size="14.5" font-weight="700" fill="#17212b">1  Prototypes</text>
+    <text x="40" y="302" font-size="13.5" fill="#35307a">cosine similarity of</text>
+    <text x="40" y="321" font-size="13.5" fill="#35307a">each frame to class</text>
+    <text x="40" y="340" font-size="13.5" fill="#35307a">prototypes</text>
+    <rect x="258" y="248" width="208" height="104" rx="6" fill="#e6e6f4" stroke="#35307a"/>
+    <text x="272" y="277" font-size="14.5" font-weight="700" fill="#17212b">2  Temporal filter</text>
+    <text x="272" y="302" font-size="13.5" fill="#35307a">confidence-weighted</text>
+    <text x="272" y="321" font-size="13.5" fill="#35307a">vote in a 15-frame</text>
+    <text x="272" y="340" font-size="13.5" fill="#35307a">window</text>
+    <rect x="490" y="248" width="208" height="104" rx="6" fill="#35307a"/>
+    <text x="504" y="277" font-size="14.5" font-weight="700" fill="#ffffff">3  Adaptive threshold</text>
+    <text x="504" y="302" font-size="13.5" fill="#e6e6f4">per-class cutoff at the</text>
+    <text x="504" y="321" font-size="13.5" fill="#e6e6f4">75th percentile, then</text>
+    <text x="504" y="340" font-size="13.5" fill="#e6e6f4">EMA prototype update</text>
+    <rect x="722" y="248" width="208" height="104" rx="6" fill="#e6e6f4" stroke="#35307a"/>
+    <text x="736" y="277" font-size="14.5" font-weight="700" fill="#17212b">4  Guided selection</text>
+    <text x="736" y="302" font-size="13.5" fill="#35307a">5 rare-candidate frames</text>
+    <text x="736" y="321" font-size="13.5" fill="#35307a">with the smallest</text>
+    <text x="736" y="340" font-size="13.5" fill="#35307a">decision margin</text>
+    <rect x="954" y="248" width="208" height="104" rx="6" fill="#ffffff" stroke="#c23a64" stroke-width="1.5"/>
+    <text x="968" y="277" font-size="14.5" font-weight="700" fill="#17212b">5  Human annotation</text>
+    <text x="968" y="302" font-size="13.5" fill="#35307a">an annotator labels the</text>
+    <text x="968" y="321" font-size="13.5" fill="#35307a">5 frames; prototypes</text>
+    <text x="968" y="340" font-size="13.5" fill="#35307a">are updated</text>
+  </g>
+  <g stroke="#35307a" stroke-width="2" fill="none">
+    <line x1="236" y1="300" x2="254" y2="300" marker-end="url(#ar2)"/>
+    <line x1="468" y1="300" x2="486" y2="300" marker-end="url(#ar2)"/>
+    <line x1="700" y1="300" x2="718" y2="300" marker-end="url(#ar2)"/>
+    <line x1="932" y1="300" x2="950" y2="300" marker-end="url(#ar2)"/>
+    <path d="M1058 354 V384 H130 V358" marker-end="url(#ar2)" stroke-dasharray="6 5"/>
+  </g>
+  <text x="596" y="402" font-size="13" fill="#56626f" text-anchor="middle">updated prototypes</text>
+
+  <!-- c: results -->
+  <text x="0" y="452" font-size="20" font-weight="700" fill="#c23a64">c</text>
+  <text x="26" y="452" font-size="15" fill="#17212b">Rare-phase mean accuracy (%), one rare-labeled training video</text>
+
+  <!-- chart geometry: baseline y=640, 100% = 150 px -->
+  <g font-size="13" fill="#56626f">
+    <line x1="60" y1="640" x2="560" y2="640" stroke="#8a949f"/>
+    <line x1="640" y1="640" x2="1140" y2="640" stroke="#8a949f"/>
+    <line x1="60" y1="490" x2="560" y2="490" stroke="#eef0f3"/>
+    <line x1="640" y1="490" x2="1140" y2="490" stroke="#eef0f3"/>
+    <line x1="60" y1="565" x2="560" y2="565" stroke="#eef0f3"/>
+    <line x1="640" y1="565" x2="1140" y2="565" stroke="#eef0f3"/>
+    <text x="52" y="644" text-anchor="end">0</text><text x="52" y="569" text-anchor="end">50</text><text x="52" y="494" text-anchor="end">100</text>
+    <text x="632" y="644" text-anchor="end">0</text><text x="632" y="569" text-anchor="end">50</text><text x="632" y="494" text-anchor="end">100</text>
+  </g>
+  <text x="310" y="676" font-size="14" fill="#17212b" text-anchor="middle">MultiBypass140</text>
+  <text x="890" y="676" font-size="14" fill="#17212b" text-anchor="middle">Cataract-101</text>
+
+  <!-- MB140: 25.9, 51.6, 55.1, 85.3 -->
+  <rect x="90"  y="601.2" width="84" height="38.8" fill="#b9c1ca"/>
+  <rect x="200" y="562.6" width="84" height="77.4" fill="#8c92cf"/>
+  <rect x="310" y="557.4" width="84" height="82.6" fill="#35307a"/>
+  <rect x="420" y="512.1" width="84" height="127.9" fill="none" stroke="#56626f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <g font-size="14" font-weight="700" fill="#17212b" text-anchor="middle">
+    <text x="132" y="594">25.9</text><text x="242" y="555">51.6</text><text x="352" y="550" fill="#35307a">55.1</text><text x="462" y="505" fill="#56626f">85.3</text>
+  </g>
+
+  <!-- Cataract-101: 12.0, 30.8, 45.3, 98.7 -->
+  <rect x="670" y="622" width="84" height="18" fill="#b9c1ca"/>
+  <rect x="780" y="593.8" width="84" height="46.2" fill="#8c92cf"/>
+  <rect x="890" y="572" width="84" height="68" fill="#35307a"/>
+  <rect x="1000" y="492" width="84" height="148" fill="none" stroke="#56626f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <g font-size="14" font-weight="700" fill="#17212b" text-anchor="middle">
+    <text x="712" y="615">12.0</text><text x="822" y="587">30.8</text><text x="932" y="565" fill="#35307a">45.3</text><text x="1042" y="485" fill="#56626f">98.7</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="13.5" fill="#17212b">
+    <rect x="620" y="432" width="14" height="14" fill="#b9c1ca"/><text x="640" y="444">Base prototype</text>
+    <rect x="760" y="432" width="14" height="14" fill="#8c92cf"/><text x="780" y="444">Temporal</text>
+    <rect x="862" y="432" width="14" height="14" fill="#35307a"/><text x="882" y="444">Stages 1 to 5</text>
+    <rect x="990" y="432" width="14" height="14" fill="none" stroke="#56626f" stroke-dasharray="3 2"/><text x="1010" y="444">Oracle reference</text>
+  </g>
+</svg>
+</div></div><p class="hint">Scroll sideways to see the whole figure.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 2</span>MICCAI 2026<br>First and corresponding author</div>
+    <div class="legend">
+      <p class="fig-title">Test-time adaptation for rare surgical phases</p>
+      <p>(a) Some surgical phases fill less than 1% of a video. A frame classifier can separate these frames well and still miss the phase at the video level. We call this the coverage-gap paradox.</p><p>(b) The method adapts class prototypes on the unlabeled test video. The adaptive threshold in stage 3 is the core step, because a fixed confidence threshold leaves the rare-phase pseudo-label pool empty. Stages 4 and 5 ask an annotator for only five frames.</p><p>(c) Results on MultiBypass140 and Cataract-101 with one rare-labeled training video. The method was also evaluated on Cholec80.</p>
+      <p class="cite">Park HM, Tozzi F, De Muynck R, Kim N, Rashidian N, Willaert W, De Neve W, Vankerschaver J. <i>Medical Image Computing and Computer Assisted Intervention (MICCAI 2026)</i>, Lecture Notes in Computer Science, Springer. In press.</p>
+      <p class="res"><a href="https://github.com/powersimmani/tta-rare-surgical">Code</a></p>
+    </div>
+  </figcaption>
+</figure>
+<div class="related"><h3>Related papers</h3><ul><li>Development of a video-based deep learning model for differentiation of malignant and benign lesions during staging laparoscopy: is the machine better than the expert? <span>ASCO Annual Meeting abstract, <i>Journal of Clinical Oncology</i> 42(16 suppl):e13616, 2024.</span></li><li>Machine learning models for classification and morphological assessment of peritoneal lesions during staging laparoscopy. <span><i>European Journal of Surgical Oncology</i> 50, 2024.</span></li><li>A reference-based approach for tumor size estimation in monocular laparoscopic videos. <span>International Workshop on Computational Mathematics Modeling in Cancer, Springer, 2024.</span></li></ul></div></section>
+<section class="theme" id="radiology" aria-labelledby="h-radiology">
+  <h2 id="h-radiology">Radiology and screening</h2>
+  <p class="intro">In diagnostic imaging I care about what a model looked at and how to measure it. The rotator cuff work began with a shoulder MRI dataset and a diagnostic model, and continued with CAMscore, which ranks MRI slices by how much they contribute to a prediction.</p>
+<figure class="plate" id="fig3">
+  <div class="plate-body"><div class="panels two"><div class="panel pad"><span class="pl" aria-hidden="true">a</span><button type="button" class="zoom" data-full="assets/img/rct-anatomy-full.webp" aria-label="Enlarge: Drawings of a normal rotator cuff, a partial-thickness tear and a full-thickness tear"><img src="assets/img/rct-anatomy-1600.webp" srcset="assets/img/rct-anatomy-900.webp 900w, assets/img/rct-anatomy-1600.webp 1600w" sizes="(min-width: 1160px) 720px, 94vw" alt="Drawings of a normal rotator cuff, a partial-thickness tear and a full-thickness tear" loading="lazy" decoding="async"></button></div><div class="panel pad"><span class="pl" aria-hidden="true">b</span><svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f3bt f3bd">
+  <title id="f3bt">Composition of the released shoulder MRI dataset</title>
+  <desc id="f3bd">2,447 T2-weighted coronal scans: 1,628 normal, 157 partial-thickness tears and 662 full-thickness tears.</desc>
+  <text x="0" y="20" font-size="15" fill="#17212b">2,447 coronal T2 scans, 16 slices each</text>
+  <!-- scale: 1,628 -> 300 px -->
+  <g font-size="14.5" fill="#17212b">
+    <text x="0" y="68">Normal</text>
+    <rect x="0" y="78" width="300" height="28" fill="#8c92cf"/>
+    <text x="308" y="98" font-weight="700">1,628</text>
+
+    <text x="0" y="146">Partial-thickness tear</text>
+    <rect x="0" y="156" width="28.9" height="28" fill="#c23a64"/>
+    <text x="37" y="176" font-weight="700" fill="#c23a64">157</text>
+
+    <text x="0" y="224">Full-thickness tear</text>
+    <rect x="0" y="234" width="122" height="28" fill="#35307a"/>
+    <text x="130" y="254" font-weight="700">662</text>
+  </g>
+  <text x="0" y="292" font-size="13" fill="#56626f">Partial-thickness tears make up 6% of the scans.</text>
+</svg>
+</div></div><div class="panels" style="margin-top:28px"><div class="panel pad"><span class="pl" aria-hidden="true">c</span><button type="button" class="zoom" data-full="assets/img/rct-camscore-full.webp" aria-label="Enlarge: Interpretable rotator cuff tear pipeline: axial, coronal and sagittal single-plane models, a fusion model, and CAMscore curves over MRI slices with the matching heat maps"><img src="assets/img/rct-camscore-1600.webp" srcset="assets/img/rct-camscore-900.webp 900w, assets/img/rct-camscore-1600.webp 1600w" sizes="(min-width: 1160px) 1100px, 94vw" alt="Interpretable rotator cuff tear pipeline: axial, coronal and sagittal single-plane models, a fusion model, and CAMscore curves over MRI slices with the matching heat maps" loading="lazy" decoding="async"></button></div></div></div><p class="hint">Tap a figure to enlarge it.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 3</span>MLHC 2020 and SPIE Medical Imaging 2024<br>First author of the SPIE 2024 paper</div>
+    <div class="legend">
+      <p class="fig-title">Rotator cuff tears in shoulder MRI</p>
+      <p>(a) Normal rotator cuff, partial-thickness tear and full-thickness tear.</p><p>(b) The shoulder MRI dataset released with the MLHC 2020 paper. Partial-thickness tears are rare, so class imbalance is part of the problem.</p><p>(c) Interpretable diagnosis. Models trained on axial, coronal and sagittal series are fused into one prediction. CAMscore then ranks individual slices, and a plane importance analysis shows how much each series contributes.</p>
+      <p class="cite">(a, b) Kim M, Park H, Kim JY, Kim SH, Hoeke S, De Neve W. <i>Machine Learning for Healthcare Conference</i>, PMLR 126:292&ndash;308, 2020. (c) Park H, Yun I, Kim M, Nguyen KT, Van Messem A, De Neve W. <i>Medical Imaging 2024: Computer-Aided Diagnosis</i>, SPIE 12927:683&ndash;693.</p>
+      <p class="res"><a href="http://proceedings.mlr.press/v126/kim20a.html">MLHC paper</a> <a href="https://github.com/powersimmani/MRI-based-Diagnosis-of-Rotator-Cuff-Tears-using-Deep-Learning-and-Weighted-Linear-Combinations">Dataset and code</a></p>
+    </div>
+  </figcaption>
+</figure>
+<div class="related"><h3>Related papers</h3><ul><li>Towards improved cervical cancer screening: vision transformer-based classification and interpretability. <span>IEEE International Symposium on Biomedical Imaging (ISBI), 2025.</span></li><li><a href="https://doi.org/10.1117/12.2580819">Towards a quantitative analysis of class activation mapping for deep learning-based computer-aided diagnosis.</a> <span>SPIE Medical Imaging 2021: Image Perception, Observer Performance, and Technology Assessment.</span></li></ul></div></section>
+<section class="theme" id="molecules" aria-labelledby="h-molecules">
+  <h2 id="h-molecules">Proteins and CRISPR</h2>
+  <p class="intro">On the biology side I use structure prediction and docking to study CRISPR-Cas systems and the anti-CRISPR proteins that phages use to block them. Work with Hyunjin Shim and colleagues produced a public set of predicted anti-CRISPR structures and a docking service for crRNA and Cas protein pairs.</p>
+<figure class="plate" id="fig4">
+  <div class="plate-body"><button type="button" class="zoom" data-full="assets/img/acr-structures-full.webp" aria-label="Enlarge: Predicted structures of anti-CRISPR proteins 0272 and 0153, each shown alone and superimposed on its experimental structure, 6MCB chain C and 5Y6A chain A"><img src="assets/img/acr-structures-1600.webp" srcset="assets/img/acr-structures-900.webp 900w, assets/img/acr-structures-1600.webp 1600w" sizes="(min-width: 1160px) 1100px, 94vw" alt="Predicted structures of anti-CRISPR proteins 0272 and 0153, each shown alone and superimposed on its experimental structure, 6MCB chain C and 5Y6A chain A" loading="lazy" decoding="async"></button></div><p class="hint">Tap a figure to enlarge it.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 4</span>Pharmaceuticals, 2022<br>First author</div>
+    <div class="legend">
+      <p class="fig-title">AlphaFold structures of anti-CRISPR proteins</p>
+      <p>Predicted structures of two anti-CRISPR proteins, Acr 0272 and Acr 0153, each shown alone and superimposed on its experimentally determined structure (PDB 6MCB chain C and 5Y6A chain A). Sequences came from anti-CRISPRdb and were grouped by how well each protein has been verified. The paper uses these structures to discuss how anti-CRISPR proteins could be developed as protein drugs.</p>
+      <p class="cite">Park HM, Park Y, Vankerschaver J, Van Messem A, De Neve W, Shim H. <i>Pharmaceuticals</i> 15(3):310, 2022.</p>
+      <p class="res"><a href="https://doi.org/10.3390/ph15030310">Paper</a> <a href="https://github.com/powersimmani/ACR_alphafold">Predicted structures</a></p>
+    </div>
+  </figcaption>
+</figure>
+<figure class="plate" id="fig5">
+  <div class="plate-body"><button type="button" class="zoom" data-full="assets/img/crispr-cas-docker-full.webp" aria-label="Enlarge: CRISPR-Cas-Docker web interface: the query form, the submitted Cas protein and CRISPR RNA structures, and the top docking results table"><img src="assets/img/crispr-cas-docker-1600.webp" srcset="assets/img/crispr-cas-docker-900.webp 900w, assets/img/crispr-cas-docker-1600.webp 1600w" sizes="(min-width: 1160px) 1100px, 94vw" alt="CRISPR-Cas-Docker web interface: the query form, the submitted Cas protein and CRISPR RNA structures, and the top docking results table" loading="lazy" decoding="async"></button></div><p class="hint">Tap a figure to enlarge it.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 5</span>BMC Bioinformatics, 2023<br>First author</div>
+    <div class="legend">
+      <p class="fig-title">CRISPR-Cas-Docker, a web service for crRNA and Cas protein docking</p>
+      <p>Users submit a crRNA and a Cas protein, either as experimental structures or as predicted ones (a 3D-predicted crRNA and an AlphaFold Cas protein). The service docks each pair with HDOCK, returns the top ten models with their scores, and uses machine learning to classify which crRNA and Cas pairs belong together when a genome carries several CRISPR arrays and Cas systems.</p>
+      <p class="cite">Park H, Won J, Park Y, Anzaku ET, Vankerschaver J, Van Messem A, De Neve W, Shim H. <i>BMC Bioinformatics</i> 24(1):167, 2023.</p>
+      <p class="res"><a href="https://doi.org/10.1186/s12859-023-05296-0">Paper</a> <a href="https://crisprcasdocker.org">Web service</a></p>
+    </div>
+  </figcaption>
+</figure>
+<figure class="plate" id="fig6">
+  <div class="plate-body"><div class="svgscroll" tabindex="0" role="region" aria-label="Scrollable figure"><svg viewBox="0 0 1200 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="f6t f6d">
+<title id="f6t">Point mutations as data augmentation for genomic sequences</title>
+<desc id="f6d">A coding sequence of eight codons and three augmented copies. A silent mutation changes GCT to GCC and keeps alanine. A missense mutation changes AAA to AGA, lysine to arginine. A nonsense mutation changes TGG to the stop codon TAG. In the paper, silent and missense mutations improved model performance, while nonsense mutations and random mutations in non-coding regions generally degraded it.</desc>
+<text x="0" y="22" font-size="15" fill="#17212b">Codon substitutions in a coding region</text>
+<text x="1000" y="22" font-size="15" fill="#17212b">Effect as augmentation</text>
+<text x="0" y="70" font-size="14.5" fill="#17212b">Original sequence</text>
+<rect x="214" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="226.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="252.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="278.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="318.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="344.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="370.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<text x="344.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">A</text>
+<rect x="398" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="410.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="436.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="450" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="462.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">K</text>
+<rect x="490" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="502.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="528.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="554.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="594.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="620.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="634" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="646.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">W</text>
+<rect x="674" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="686.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="712.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="738.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="778.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="804.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="830.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="870.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="896.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="50" width="24" height="28" rx="3" fill="#e6e6f4"/><text x="922.0" y="70" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="97" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="70" font-size="15" fill="#56626f">Baseline</text>
+<text x="0" y="136" font-size="14.5" fill="#17212b">Silent mutation</text>
+<rect x="214" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="226.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="252.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="278.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="318.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="344.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="116" width="24" height="28" rx="3" fill="#c23a64"/><text x="370.0" y="136" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="344.0" y="163" font-size="13" font-weight="700" fill="#35307a" text-anchor="middle">A</text>
+<rect x="398" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="410.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="436.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="450" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="462.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">K</text>
+<rect x="490" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="502.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="528.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="554.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="594.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="620.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="634" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="646.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">W</text>
+<rect x="674" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="686.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="712.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="738.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="778.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="804.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="830.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="870.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="896.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="116" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="922.0" y="136" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="163" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="136" font-size="15" font-weight="700" fill="#35307a">Improved</text>
+<text x="0" y="202" font-size="14.5" fill="#17212b">Missense mutation</text>
+<rect x="214" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="226.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="252.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="278.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="318.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="344.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="370.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<text x="344.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">A</text>
+<rect x="398" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="410.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="182" width="24" height="28" rx="3" fill="#c23a64"/><text x="436.0" y="202" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="450" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="462.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="229" font-size="13" font-weight="700" fill="#c23a64" text-anchor="middle">R</text>
+<rect x="490" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="502.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="528.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="554.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="594.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="620.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="634" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="646.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">W</text>
+<rect x="674" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="686.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="712.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="738.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="778.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="804.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="830.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="870.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="896.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="182" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="922.0" y="202" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="229" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="202" font-size="15" font-weight="700" fill="#35307a">Improved</text>
+<text x="0" y="268" font-size="14.5" fill="#17212b">Nonsense mutation</text>
+<rect x="214" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="226.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="240" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="252.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="266" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="278.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="252.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">M</text>
+<rect x="306" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="318.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="332" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="344.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="358" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="370.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<text x="344.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">A</text>
+<rect x="398" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="410.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="424" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="436.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="450" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="462.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="436.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">K</text>
+<rect x="490" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="502.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="516" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="528.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="542" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="554.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="528.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">E</text>
+<rect x="582" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="594.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="608" y="248" width="24" height="28" rx="3" fill="#c23a64"/><text x="620.0" y="268" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="634" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="646.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="620.0" y="295" font-size="13" font-weight="700" fill="#c23a64" text-anchor="middle">stop</text>
+<rect x="674" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="686.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="700" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="712.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">T</text>
+<rect x="726" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="738.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<text x="712.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">L</text>
+<rect x="766" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="778.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<rect x="792" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="804.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<rect x="818" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="830.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">C</text>
+<text x="804.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">T</text>
+<rect x="858" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="870.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="884" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="896.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">G</text>
+<rect x="910" y="248" width="24" height="28" rx="3" fill="#f1f2f7"/><text x="922.0" y="268" font-size="15.5" fill="#35307a" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace">A</text>
+<text x="896.0" y="295" font-size="13" fill="#8a949f" text-anchor="middle">G</text>
+<text x="1000" y="268" font-size="15" font-weight="700" fill="#c23a64">Degraded</text>
+<text x="0" y="336" font-size="13" fill="#56626f">Letters under each codon are the encoded amino acids. Substituted bases in pink.</text>
+<text x="0" y="358" font-size="13" fill="#56626f">Random mutations in non-coding regions also degraded performance.</text>
+</svg></div></div><p class="hint">Scroll sideways to see the whole figure.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 6</span>BMC Bioinformatics, 2024<br>Co-author</div>
+    <div class="legend">
+      <p class="fig-title">Which point mutations make useful augmentations for genomic data</p>
+      <p>Image models are often trained on flipped or cropped copies of their inputs, but most of those operations change the meaning of a DNA sequence. This study proposed codon substitutions in coding regions instead and tested them on translation initiation and splice site detection. Silent and missense mutations improved performance, while nonsense mutations and random mutations in non-coding regions generally degraded it. The codons shown are illustrative examples.</p>
+      <p class="cite">Lee H, Ozbulak U, Park H, Depuydt S, De Neve W, Vankerschaver J. <i>BMC Bioinformatics</i> 25(1):170, 2024.</p>
+      <p class="res"><a href="https://doi.org/10.1186/s12859-024-05787-6">Paper</a> <a href="https://zenodo.org/records/10457890">Data and code</a></p>
+    </div>
+  </figcaption>
+</figure>
+<div class="related"><h3>Related papers</h3><ul><li><a href="https://doi.org/10.1186/s13062-022-00339-5">In silico optimization of RNA-protein interactions for CRISPR-Cas13-based antimicrobials.</a> <span><i>Biology Direct</i> 17(1), 2022. First author.</span></li></ul></div></section>
+<section class="theme" id="microscopy" aria-labelledby="h-microscopy">
+  <h2 id="h-microscopy">Microscopy</h2>
+  <p class="intro">Microplastics in seafood are usually identified by eye under a fluorescence microscope. MP-Net segments the particles automatically, and the annotation tool and image set we built for it are public.</p>
+<figure class="plate" id="fig7">
+  <div class="plate-body"><div class="panel pad"><span class="pl" aria-hidden="true">a</span><button type="button" class="zoom" data-full="assets/img/mp-pipeline-full.webp" aria-label="Enlarge: Pipeline from clams to a fluorescence image, a segmentation mask, and particle type and size"><img src="assets/img/mp-pipeline-1600.webp" srcset="assets/img/mp-pipeline-900.webp 900w, assets/img/mp-pipeline-1600.webp 1600w" sizes="(min-width: 1160px) 1100px, 94vw" alt="Pipeline from clams to a fluorescence image, a segmentation mask, and particle type and size" loading="lazy" decoding="async"></button></div><div class="panels mp" style="margin-top:28px"><div class="panel pad"><span class="pl" aria-hidden="true">b</span><button type="button" class="zoom" data-full="assets/img/mp-fluorescence-512.webp" aria-label="Enlarge: Stitched fluorescence image of a stained sample with many bright particles"><img src="assets/img/mp-fluorescence-512.webp" srcset="assets/img/mp-fluorescence-512.webp 512w" sizes="(min-width: 820px) 300px, 94vw" alt="Stitched fluorescence image of a stained sample with many bright particles" loading="lazy" decoding="async"></button><p class="sub">Fluorescence</p></div><div class="panel pad"><span class="pl" aria-hidden="true"></span><button type="button" class="zoom" data-full="assets/img/mp-brightfield-512.webp" aria-label="Enlarge: Stitched bright-field image of the same sample"><img src="assets/img/mp-brightfield-512.webp" srcset="assets/img/mp-brightfield-512.webp 512w" sizes="(min-width: 820px) 300px, 94vw" alt="Stitched bright-field image of the same sample" loading="lazy" decoding="async"></button><p class="sub">Bright field, same sample</p></div><div class="panel pad"><span class="pl" aria-hidden="true">c</span><button type="button" class="zoom" data-full="assets/img/mp-annotation-tool-1154.webp" aria-label="Enlarge: Microplastics Annotation Package window with menus for masks, annotation and model training over a fluorescence image"><img src="assets/img/mp-annotation-tool-1154.webp" srcset="assets/img/mp-annotation-tool-700.webp 700w, assets/img/mp-annotation-tool-1154.webp 1154w" sizes="(min-width: 820px) 380px, 94vw" alt="Microplastics Annotation Package window with menus for masks, annotation and model training over a fluorescence image" loading="lazy" decoding="async"></button><p class="sub">Microplastics Annotation Package</p></div></div></div><p class="hint">Tap a figure to enlarge it.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 7</span>PLoS ONE, 2022<br>First author</div>
+    <div class="legend">
+      <p class="fig-title">MP-Net: segmentation of microplastics isolated from clams</p>
+      <p>(a) Particles isolated from clams are stained with Nile red and imaged under fluorescence. MP-Net segments each particle, and the masks give particle type and size.</p><p>(b) Stitched fluorescence and bright-field images of the same sample from the public image set.</p><p>(c) The annotation tool used to build the segmentation masks.</p>
+      <p class="cite">Park H, Park S, de Guzman MK, Baek JY, Cirkovic Velickovic T, Van Messem A, De Neve W. <i>PLoS ONE</i> 17(6):e0269449, 2022.</p>
+      <p class="res"><a href="https://doi.org/10.1371/journal.pone.0269449">Paper</a> <a href="https://github.com/powersimmani/Microplastics-Annotation-Package">Annotation tool</a> <a href="https://github.com/powersimmani/nile-red-microplastic-images">Image set</a></p>
+    </div>
+  </figcaption>
+</figure>
+<div class="related"><h3>Related papers</h3><ul><li>Developing a segmentation model for microscopic images of microplastics isolated from clams. <span>ICPR International Workshops and Challenges, LNCS 12666, 2021.</span></li></ul></div></section>
+<section class="theme" id="signals" aria-labelledby="h-signals">
+  <h2 id="h-signals">Physiological signals</h2>
+  <p class="intro">Stress and emotion models combine video, audio, text and wearable sensor signals, so it is hard to tell what a prediction is based on. Our team took third place in MuSe-Stress 2022 and second place in MuSe-Personalisation 2023, and the journal paper that followed examines the stress models with SHAP values and attention weights.</p>
+<figure class="plate" id="fig8">
+  <div class="plate-body"><button type="button" class="zoom" data-full="assets/img/stress-pipeline-full.webp" aria-label="Enlarge: Stress detection pipeline: video, audio, text and sensor inputs, two feature extractors, a model predicting arousal and valence, and use cases"><img src="assets/img/stress-pipeline-1600.webp" srcset="assets/img/stress-pipeline-900.webp 900w, assets/img/stress-pipeline-1600.webp 1600w" sizes="(min-width: 1160px) 1100px, 94vw" alt="Stress detection pipeline: video, audio, text and sensor inputs, two feature extractors, a model predicting arousal and valence, and use cases" loading="lazy" decoding="async"></button></div><p class="hint">Tap a figure to enlarge it.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 8</span>IEEE Transactions on Affective Computing, 2025<br>First author</div>
+    <div class="legend">
+      <p class="fig-title">Which signals drive a stress prediction</p>
+      <p>Pipeline for the MuSe-Stress 2022 task. Video, audio, text and physiological sensor signals are turned into features by two extractors, and models predict arousal and valence over time. The journal paper uses SHAP and attention to show which inputs each prediction depends on. Target uses include job interviews, public speaking, consultation and healthcare.</p>
+      <p class="cite">Park H, Kim G, Oh J, Van Messem A, De Neve W. <i>IEEE Transactions on Affective Computing</i> 15(1):1&ndash;17.</p>
+      <p class="res"><a href="https://doi.org/10.1109/TAFFC.2024.3488112">Paper</a> <a href="https://github.com/powersimmani/MuSe2022FeelsGood">Team results</a></p>
+    </div>
+  </figcaption>
+</figure>
+<div class="related"><h3>Related papers</h3><ul><li><a href="https://doi.org/10.1145/3551876.3554807">Towards multimodal prediction of time-continuous emotion using pose feature engineering and a transformer encoder.</a> <span>MuSe Workshop and Challenge, ACM Multimedia 2022.</span></li><li><a href="https://doi.org/10.1145/3606039.3613104">MuSe-Personalization 2023: feature engineering, hyperparameter optimization, and transformer-encoder re-discovery.</a> <span>MuSe Workshop and Challenge, ACM Multimedia 2023. Second place.</span></li></ul></div></section>
+<section class="theme" id="teaching" aria-labelledby="h-teaching">
+  <h2 id="h-teaching">Teaching and mentoring</h2>
+  <div class="twocol">
+    <div>
+      <p>In 2021 I started the AI Vacation School at Ghent University Global Campus, an unpaid intensive program for undergraduates that runs in summer and winter. I wrote a 20-lecture curriculum that goes from regression and CNNs to transformers, diffusion models and SHAP, and released the slides and notebooks openly.</p>
+      <p><a href="https://github.com/powersimmani/AIVS">Program repository</a>&nbsp;&nbsp;&nbsp;<a href="https://powersimmani.github.io/AIVS_Lecture_Slides/">Lecture slides</a></p>
+    </div>
+    <div>
+      <p>More than thirty students have taken part. Several became co-authors on the papers on this page, and alumni have gone on to graduate programs at KAIST, Seoul National University, UNIST, Ghent University and Scripps Research.</p>
+    </div>
+  </div>
+<figure class="plate" id="fig9">
+  <div class="plate-body"><button type="button" class="zoom" data-full="assets/img/aivs-posters-full.webp" aria-label="Enlarge: Four student research posters: Parkinson&#x27;s disease biomarkers, rotator cuff tear diagnosis, heart disease diagnosis and hepatitis C prediction"><img src="assets/img/aivs-posters-2000.webp" srcset="assets/img/aivs-posters-1000.webp 1000w, assets/img/aivs-posters-2000.webp 2000w" sizes="(min-width: 1160px) 1100px, 94vw" alt="Four student research posters: Parkinson&#x27;s disease biomarkers, rotator cuff tear diagnosis, heart disease diagnosis and hepatitis C prediction" loading="lazy" decoding="async"></button></div><p class="hint">Tap a figure to enlarge it.</p>
+  <figcaption>
+    <div class="meta"><span class="fig-no">Fig. 9</span>AI Vacation School, 2021 to 2026<br>Founder and lead instructor</div>
+    <div class="legend">
+      <p class="fig-title">Student research posters</p>
+      <p>Research posters by AI Vacation School students on biomarker discovery for Parkinson's disease, rotator cuff tear diagnosis from MRI, heart disease diagnosis and hepatitis C prediction.</p>
+      <p class="cite">Center for Biosystems and Biotech Data Science, Ghent University Global Campus.</p>
+      <p class="res"></p>
+    </div>
+  </figcaption>
+</figure>
+</section>
+<section class="theme" id="contact" aria-labelledby="h-contact">
+  <h2 id="h-contact">Contact</h2>
+  <p class="invite">At Texas Children's Hospital I am building a group that pairs engineers with clinicians on pediatric and oncology problems. If you are a clinician with a question your data could answer, or a student who wants to work on one, please write to me.</p>
+  <div class="contact">
+    <img src="assets/img/profile-480.webp" alt="Portrait of Ho-min Park" width="180" height="216" loading="lazy">
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:Ho-min.Park@bcm.edu">Ho-min.Park@bcm.edu</a></dd>
+      <dt>Affiliation</dt><dd>Texas Children's Hospital Data Center, Baylor College of Medicine, Houston, Texas</dd>
+      <dt>Code</dt><dd><a href="https://github.com/powersimmani">github.com/powersimmani</a><br><a href="https://github.com/HominParkBCM">github.com/HominParkBCM</a></dd>
+      <dt>Profiles</dt><dd><a href="https://scholar.google.com/citations?user=mFzW6LEAAAAJ">Google Scholar</a>, <a href="https://orcid.org/0000-0001-9937-8617">ORCID 0000-0001-9937-8617</a>, <a href="https://www.linkedin.com/in/park-ho-min-b46658a6">LinkedIn</a></dd>
+      <dt>Training</dt><dd>Postdoctoral researcher, Ghent University Global Campus, 2025 to 2026<br>Ph.D. in Computer Science Engineering, Ghent University, 2025<br>M.S. in Computer Engineering, Ajou University, 2018<br>B.S. in Computer Science and Engineering, Ajou University, 2016</dd>
+    </dl>
+  </div>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Figures come from the papers and public repositories named in each legend. Figures 1, 2 and 6 were redrawn for this site; the numbers and findings in them come from the papers and the released code.</p>
+    <p>Last updated September 2026.</p>
+  </div>
+</footer>
+<dialog class="lb" id="lightbox" aria-label="Enlarged figure">
+  <img alt="">
+  <div class="lb-bar"><span class="lb-cap"></span><button type="button" class="lb-close">Close</button></div>
+</dialog>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
