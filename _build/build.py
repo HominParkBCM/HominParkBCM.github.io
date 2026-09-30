@@ -151,17 +151,6 @@ def build_index():
     <li><a href="{LINKS['orcid']}">ORCID</a></li>
     <li><a href="{LINKS['linkedin']}">LinkedIn</a></li>
   </ul>
-  <figure class="series">
-    <div class="series-grid">
-      <span class="lab">Normal</span>
-      <div class="strip row1">{img('rct-mri-normal', 'Sixteen coronal MRI slices of a normal shoulder', sizes='(min-width: 1160px) 960px, 90vw', widths=(1000, 1988), zoom=False)}</div>
-      <span class="lab">Partial-thickness tear</span>
-      <div class="strip row2">{img('rct-mri-partial', 'Sixteen coronal MRI slices of a shoulder with a partial-thickness rotator cuff tear', sizes='(min-width: 1160px) 960px, 90vw', widths=(1000, 1988), zoom=False)}</div>
-      <span class="lab">Full-thickness tear</span>
-      <div class="strip row3">{img('rct-mri-full', 'Sixteen coronal MRI slices of a shoulder with a full-thickness rotator cuff tear', sizes='(min-width: 1160px) 960px, 90vw', widths=(1000, 1988), zoom=False)}</div>
-    </div>
-    <figcaption>Sixteen coronal T2-weighted slices, about 2 mm apart, for three shoulders from the rotator cuff tear dataset we released in 2020. The models behind <a href="#fig3">Fig. 3</a> read series like these.</figcaption>
-  </figure>
 </section>
 ''')
 
@@ -304,14 +293,10 @@ def build_index():
     # ---- Teaching
     out.append(f'''<section class="theme" id="teaching" aria-labelledby="h-teaching">
   <h2 id="h-teaching">Teaching and mentoring</h2>
-  <div class="twocol">
-    <div>
-      <p>In 2021 I started the AI Vacation School at Ghent University Global Campus, an unpaid intensive program for undergraduates that runs in summer and winter. I wrote a 20-lecture curriculum that goes from regression and CNNs to transformers, diffusion models and SHAP, and released the slides and notebooks openly.</p>
-      <p><a href="https://github.com/powersimmani/AIVS">Program repository</a>&nbsp;&nbsp;&nbsp;<a href="https://powersimmani.github.io/AIVS_Lecture_Slides/">Lecture slides</a></p>
-    </div>
-    <div>
-      <p>More than thirty students have taken part. Several became co-authors on the papers on this page, and alumni have gone on to graduate programs at KAIST, Seoul National University, UNIST, Ghent University and Scripps Research.</p>
-    </div>
+  <div class="intro">
+    <p>In 2021 I started the AI Vacation School at Ghent University Global Campus, an unpaid intensive program for undergraduates that runs in summer and winter. I wrote a 20-lecture curriculum that goes from regression and CNNs to transformers, diffusion models and SHAP, and released the slides and notebooks openly.</p>
+    <p>More than thirty students have taken part. Several became co-authors on the papers on this page, and alumni have gone on to graduate programs at KAIST, Seoul National University, UNIST, Ghent University and Scripps Research.</p>
+    <p><a href="https://github.com/powersimmani/AIVS">Program repository</a>&nbsp;&nbsp;&nbsp;<a href="https://powersimmani.github.io/AIVS_Lecture_Slides/">Lecture slides</a></p>
   </div>
 ''')
     out.append(plate(9, img('aivs-posters', 'Four student research posters: Parkinson\'s disease biomarkers, rotator cuff tear diagnosis, heart disease diagnosis and hepatitis C prediction', widths=(1000, 2000)),
