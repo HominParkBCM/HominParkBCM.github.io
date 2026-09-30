@@ -291,3 +291,5 @@ dialog.lb button { font: inherit; color: #fff; background: transparent; border: 
   .svgscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
   .svgscroll svg { min-width: 780px; }
 }
+.panels.pair { grid-template-columns: minmax(0, 1.33fr) minmax(0, 0.73fr); align-items: start; }
+@media (max-width: 820px) { .panels.pair { grid-template-columns: 1fr; } }

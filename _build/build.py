@@ -68,7 +68,7 @@ def header(current):
 
 FOOT = '''<footer class="site-foot">
   <div class="wrap">
-    <p>Figures come from the papers and public repositories named in each legend. Figures 1 and 6 and the chart in Fig. 2b were drawn for this site; the numbers and findings in them come from the papers.</p>
+    <p>Figures come from the papers and public repositories named in each legend. Fig. 6 and the chart in Fig. 2b were drawn for this site; the numbers and findings in them come from the papers.</p>
     <p>Last updated September 2026.</p>
   </div>
 </footer>
@@ -159,13 +159,23 @@ def build_index():
   <h2 id="h-surgery">Surgical video</h2>
   <p class="intro">Staging laparoscopy decides whether a patient with gastrointestinal cancer can go on to curative treatment, and that decision often depends on whether a small nodule on the peritoneum is metastasis. With surgeons at Ghent University Hospital I build models that read these videos, and methods that still work when the phase or lesion of interest appears in only a few frames.</p>
 ''')
-    out.append(plate(1, wide_svg('fig-laparoscopy.svg'),
+    src = 'Tozzi et al., <i>International Journal of Surgery</i> 2026'
+    ijs_body = (panel('a', img('ijs-examples', 'Eight laparoscopic frames of biopsied peritoneal lesions, each with the pathology ground truth, the multimodal model output and the answers of 13 oncologic surgeons', widths=(900, 1600)), f'Figure 5 of {src}.')
+        + '<div class="panels" style="margin-top:28px">'
+        + panel('b', img('ijs-overview', 'Study overview: staging laparoscopy videos, frame selection and annotation, morphologic assessment by experts, pathology review, then deep learning, machine learning and multimodal models, validated with ROC curves, SHAP and surgeon predictions', widths=(900, 1600)), f'Figure 1 of {src}.')
+        + '</div><div class="panels pair" style="margin-top:28px">'
+        + panel('c', img('ijs-roc', 'Four ROC curves on the test set: image-based model AUC 0.72, morphology-based model AUC 0.86, multimodal model AUC 0.88, and experts AUC 0.78', sizes='(min-width: 820px) 640px, 94vw', widths=(900, 1600)), f'Figure 3 of {src}.')
+        + panel('d', img('ijs-shap', 'SHAP summary plot and mean absolute SHAP values of the morphology-based model; flat surface and presence of neovasculature rank highest', sizes='(min-width: 820px) 360px, 94vw', widths=(900, 1600)), f'Figure 2 of {src}.')
+        + '</div>')
+    out.append(plate(1, ijs_body,
         'International Journal of Surgery, 2026', 'Co-first author, equal contribution',
         'A multimodal model for peritoneal lesions during staging laparoscopy',
-        ['(a) An image model classifies lesions in intraoperative video frames. A second model uses morphologic features of the same lesions, scored by two expert surgeons. The two outputs are fused into one prediction of peritoneal metastasis or benign lesion.',
-         '(b) Discrimination on 67 patients. The fused model reached an AUC of 0.88, above the expert surgeons (0.78) and the best image-only model (0.72).'],
-        'Tozzi F, Park HM, Mousavi SA, Van Liefferinge M, Moon D, Fadaei S, et al. <i>International Journal of Surgery</i> 112(1):373&ndash;383, 2026.',
-        [('Paper', doi('10.1097/JS9.0000000000003448'))], hint='scroll'))
+        ['(a) Biopsied lesions from the test set, each shown with the pathology result, the model output and the answer chosen by most of the 13 oncologic surgeons who reviewed the same frame.',
+         '(b) Study design. The cohort had 453 biopsied lesions from 67 patients, split at the patient level. An image model reads intraoperative frames, a second model reads morphologic features scored by two blinded surgeons with a structured checklist, and a multimodal model combines the two.',
+         '(c) ROC curves on the independent test set of 13 patients: image-based model AUC 0.72, morphology-based model 0.86, multimodal model 0.88, and the 13 surgeons 0.78.',
+         '(d) SHAP values of the morphology model. Neovasculature and marked nodularity moved predictions toward metastasis, while a flat surface and absence of marked contours moved them toward benign.'],
+        'Tozzi F, Park HM, Mousavi SA, Van Liefferinge M, Moon D, Fadaei S, et al. <i>International Journal of Surgery</i> 112:373&ndash;383, 2026. Figures reproduced unchanged under the CC BY-NC-ND 4.0 license.',
+        [('Paper', doi('10.1097/JS9.0000000000003448'))]))
     tta_body = (panel('a', img('tta-overview', 'Figure 1 of the MICCAI 2026 paper. A film strip of laparoscopic frames passes through a foundation model; in feature space the common-phase prototype covers a wide region while the rare-phase prototype covers a narrow one, so new rare frames are misclassified. Below, the pipeline: training videos give initial prototypes, and test videos pass through a temporal precision filter, an adaptive-threshold update and auto-guided annotation to give updated prototypes.', widths=(1000, 1600)), 'Figure 1 of the paper, reproduced from Park et al., MICCAI 2026.')
         + '<div class="panels" style="margin-top:28px">'
         + panel('b', wide_svg('fig-tta-results.svg'))
