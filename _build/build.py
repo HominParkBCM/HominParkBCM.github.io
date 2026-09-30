@@ -68,7 +68,7 @@ def header(current):
 
 FOOT = '''<footer class="site-foot">
   <div class="wrap">
-    <p>Figures come from the papers and public repositories named in each legend. Figures 1, 2 and 6 were redrawn for this site; the numbers and findings in them come from the papers and the released code.</p>
+    <p>Figures come from the papers and public repositories named in each legend. Figures 1 and 6 and the chart in Fig. 2b were drawn for this site; the numbers and findings in them come from the papers.</p>
     <p>Last updated September 2026.</p>
   </div>
 </footer>
@@ -100,7 +100,8 @@ def panel(letter, body, sub='', pad=True):
 
 def plate(no, body, venue, role, title, legend, cite, res, hint='tap'):
     hint_html = {'tap': '<p class="hint">Tap a figure to enlarge it.</p>',
-                 'scroll': '<p class="hint">Scroll sideways to see the whole figure.</p>'}.get(hint, '')
+                 'scroll': '<p class="hint">Scroll sideways to see the whole figure.</p>',
+                 'both': '<p class="hint">Tap the image to enlarge it. Scroll the chart sideways.</p>'}.get(hint, '')
     legend_html = ''.join(f'<p>{p}</p>' for p in legend)
     res_html = ' '.join(f'<a href="{u}">{t}</a>' for t, u in res)
     return f'''<figure class="plate" id="fig{no}">
@@ -176,14 +177,17 @@ def build_index():
          '(b) Discrimination on 67 patients. The fused model reached an AUC of 0.88, above the expert surgeons (0.78) and the best image-only model (0.72).'],
         'Tozzi F, Park HM, Mousavi SA, Van Liefferinge M, Moon D, Fadaei S, et al. <i>International Journal of Surgery</i> 112(1):373&ndash;383, 2026.',
         [('Paper', doi('10.1097/JS9.0000000000003448'))], hint='scroll'))
-    out.append(plate(2, wide_svg('fig-tta.svg'),
+    tta_body = (panel('a', img('tta-overview', 'Figure 1 of the MICCAI 2026 paper. A film strip of laparoscopic frames passes through a foundation model; in feature space the common-phase prototype covers a wide region while the rare-phase prototype covers a narrow one, so new rare frames are misclassified. Below, the pipeline: training videos give initial prototypes, and test videos pass through a temporal precision filter, an adaptive-threshold update and auto-guided annotation to give updated prototypes.', widths=(1000, 1600)), 'Figure 1 of the paper, reproduced from Park et al., MICCAI 2026.')
+        + '<div class="panels" style="margin-top:28px">'
+        + panel('b', wide_svg('fig-tta-results.svg'))
+        + '</div>')
+    out.append(plate(2, tta_body,
         'MICCAI 2026', 'First and corresponding author',
         'Test-time adaptation for rare surgical phases',
-        ['(a) Some surgical phases fill less than 1% of a video. A frame classifier can separate these frames well and still miss the phase at the video level. We call this the coverage-gap paradox.',
-         '(b) The method adapts class prototypes on the unlabeled test video. The adaptive threshold in stage 3 is the core step, because a fixed confidence threshold leaves the rare-phase pseudo-label pool empty. Stages 4 and 5 ask an annotator for only five frames.',
-         '(c) Results on MultiBypass140 and Cataract-101 with one rare-labeled training video. The method was also evaluated on Cholec80.'],
+        ['(a) A rare-phase prototype built from a few videos covers only a narrow region of feature space, so new rare frames (&times;) are assigned to a common phase. Adding more rare-phase training videos does not close this gap, because averaging frames from different surgical contexts dilutes the prototype. We call this the coverage-gap paradox. The method adapts the prototypes at test time on frozen foundation-model features: a temporal precision filter (stages 1 and 2), an adaptive per-class threshold for pseudo-labels (stage 3), and annotation of five frames chosen by decision margin (stages 4 and 5).',
+         '(b) Rare-phase accuracy with one rare-labeled training video, or five for Cholec80, where rare labels were masked instead of videos removed. Temporal uses no labels at test time; Combined adds five annotated frames. The adaptation adds about 20K parameters and runs in under 0.1 ms per frame.'],
         'Park HM, Tozzi F, De Muynck R, Kim N, Rashidian N, Willaert W, De Neve W, Vankerschaver J. <i>Medical Image Computing and Computer Assisted Intervention (MICCAI 2026)</i>, Lecture Notes in Computer Science, Springer. In press.',
-        [('Code', 'https://github.com/powersimmani/tta-rare-surgical')], hint='scroll'))
+        [('Code', 'https://github.com/powersimmani/tta-rare-surgical')], hint='both'))
     out.append(related([
         ('Development of a video-based deep learning model for differentiation of malignant and benign lesions during staging laparoscopy: is the machine better than the expert?',
          'ASCO Annual Meeting abstract, <i>Journal of Clinical Oncology</i> 42(16 suppl):e13616, 2024.'),

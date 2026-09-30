@@ -17,7 +17,8 @@ Inline figure schematics live in `_build/svg/`. Raster figures are in `assets/im
 
 ## Figure sources
 
-- Fig. 1, 2, 6: schematics redrawn for this site from the papers and the released code
+- Fig. 1, 6 and the chart in Fig. 2b: drawn for this site from numbers in the papers
+- Fig. 2a: Figure 1 of the MICCAI 2026 paper (Park et al.)
 - Fig. 3: github.com/powersimmani/MRI-based-Diagnosis-of-Rotator-Cuff-Tears-using-Deep-Learning-and-Weighted-Linear-Combinations and the AIVS repository
 - Fig. 4: github.com/powersimmani/ACR_alphafold
 - Fig. 5, 8, 9: github.com/powersimmani/AIVS
